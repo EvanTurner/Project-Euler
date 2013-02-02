@@ -53,8 +53,6 @@ def generating_fncn(x, fncn=0):
 
     return f_x
 
-def OP(k,n, diffs): return eval_newton_poly(diffs, k, n)
-
 def solve_pr101(k_max, fncn=0):
     epsilon = 1e-03
     total_FIT = 0
@@ -65,7 +63,7 @@ def solve_pr101(k_max, fncn=0):
         diffs = get_newton_diffs(k, f_k)
         
         for x in xrange(len(k), len(k) + 20):
-            eval_newton_x = eval_newton_poly(diffs, k, x)
+            eval_newton_x = eval_newton_poly(diffs, k, x)   #OP(k,n)
             gf_x = generating_fncn(x, fncn)
             if abs(eval_newton_x  - gf_x) > epsilon:
                 total_FIT += eval_newton_x
