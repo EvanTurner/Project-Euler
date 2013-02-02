@@ -3,7 +3,7 @@
 
 def u(n, m): return sum([(-1)**i * n**i for i in xrange(m+1)])
 
-# takes n + 1 data points -- (x, f(x)) -- and generates interpolated poly of order n
+# takes n + 1 data points -- (x, f(x)) -- and generates divided differences
 def get_newton_diffs(x, fx):
     n = len(x) - 1
 
